@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_03bb1e0f",
+        "filename": "python-os-traits.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-05-31T08:53:31Z",
+      "side": 1,
+      "message": "ansible?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 61
+      },
+      "revId": "0df80fbf011d635aea17e2925de1ebd7d6d5286d",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_433c4694",
+        "filename": "python-os-traits.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-05-31T08:53:31Z",
+      "side": 1,
+      "message": "os-trait is tested with python 3.5 in upstream gate so i think it\u0027s supported.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 35
+      },
+      "revId": "0df80fbf011d635aea17e2925de1ebd7d6d5286d",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_63414a0b",
+        "filename": "python-os-traits.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-05-31T08:53:31Z",
+      "side": 1,
+      "message": "I tested a local build using python3 in fedora and worked well, i\u0027d enable with_python3 for fedora.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 22
+      },
+      "revId": "0df80fbf011d635aea17e2925de1ebd7d6d5286d",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_c3c0367f",
+        "filename": "python-os-traits.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-05-31T08:53:31Z",
+      "side": 1,
+      "message": "BuildRequires is common, not by subpackage, so you don\u0027t need to repeat the line for py3.",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 19
+      },
+      "revId": "0df80fbf011d635aea17e2925de1ebd7d6d5286d",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
