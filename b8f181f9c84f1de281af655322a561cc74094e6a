@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_c93695e7",
+        "filename": "python-os-traits.spec",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2017-06-01T09:37:44Z",
+      "side": 1,
+      "message": "Please enable the doc building.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 54
+      },
+      "revId": "b8f181f9c84f1de281af655322a561cc74094e6a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
