@@ -16,6 +16,24 @@
       "revId": "9e98646f87bb17e48297e3fed1314005bd5a6f77",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_095fbd0f",
+        "filename": "python-os-traits.spec",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2017-06-01T10:57:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_c964d5e7",
+      "revId": "9e98646f87bb17e48297e3fed1314005bd5a6f77",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
