@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_8488f4e8",
+        "filename": "python-os-traits.spec",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2017-06-02T13:31:34Z",
+      "side": 1,
+      "message": "@Alan, do you mean below:-\n%description -n python2-%{sname}\n%{description}\n\nIf yes i tried it but it didn\u0027t worked for me, i think this works only for tags and global vars.\n(dlrn-venv) [ykarel@yatinkarel current]$ rpm -qip python2-os-traits-0.3.1-0.20170602131806.789ce95.el7.centos.noarch.rpm\nName        : python2-os-traits\nVersion     : 0.3.1\nRelease     : 0.20170602131806.789ce95.el7.centos\nArchitecture: noarch\nInstall Date: (not installed)\nGroup       : Unspecified\nSize        : 35291\nLicense     : ASL 2.0\nSignature   : (none)\nSource RPM  : python-os-traits-0.3.1-0.20170602131806.789ce95.el7.centos.src.rpm\nBuild Date  : Friday 02 June 2017 06:48:36 PM IST\nBuild Host  : yatinkarel\nRelocations : (not relocatable)\nURL         : http://www.openstack.org/\nSummary     : A library containing standardized trait strings\nDescription :\n%{description}\n\n@Alan if you mean something else, let me know i will push a patch for review.",
+      "parentUuid": "9aa7fdbe_0446c4bf",
+      "revId": "9788f8b5a875f9107849a94363fd41d52c4ddada",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_2412e8b4",
         "filename": "python-os-traits.spec",
         "patchSetId": 10
