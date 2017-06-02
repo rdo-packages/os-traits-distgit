@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_0446c4bf",
+        "filename": "python-os-traits.spec",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2017-06-02T12:34:31Z",
+      "side": 1,
+      "message": "This copy/paste could be replaced with %{description}.",
+      "revId": "9788f8b5a875f9107849a94363fd41d52c4ddada",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_2412e8b4",
+        "filename": "python-os-traits.spec",
+        "patchSetId": 10
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2017-06-02T12:34:31Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "9788f8b5a875f9107849a94363fd41d52c4ddada",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
