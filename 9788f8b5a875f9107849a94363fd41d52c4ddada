@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_f83320f4",
+        "filename": "python-os-traits.spec",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2017-06-05T04:40:59Z",
+      "side": 1,
+      "message": "you can define a global variable something like \n%global common_desc OS-traits A library containing standardized trait strings.Traits are strings\nthat represent a feature of some resource provider. This library contains the\ncatalog of constants that have been standardized in the OpenStack community to\nrefer to a particular hardware, virtualization, storage, network, or device\ntrait.\n\nAnd use the same variable at different description places.",
+      "parentUuid": "9aa7fdbe_8488f4e8",
+      "revId": "9788f8b5a875f9107849a94363fd41d52c4ddada",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_2412e8b4",
         "filename": "python-os-traits.spec",
         "patchSetId": 10
