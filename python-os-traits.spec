@@ -3,6 +3,12 @@
 
 %global sname os-traits
 %global pypi_name os_traits
+%global common_desc \
+OS-traits A library containing standardized trait strings. Traits are strings \
+that represent a feature of some resource provider. This library contains the \
+catalog of constants that have been standardized in the OpenStack community to \
+refer to a particular hardware, virtualization, storage, network, or device \
+trait.
 
 %if 0%{?fedora}
 %global with_python3 1
@@ -24,12 +30,7 @@ BuildRequires:  python-pbr
 BuildRequires:  python-setuptools
 
 %description
-OS-traits A library containing standardized trait strings.Traits are strings
-that represent a feature of some resource provider. This library contains the
-catalog of constants that have been standardized in the OpenStack community to
-refer to a particular hardware, virtualization, storage, network, or device
-trait.
-
+%{common_desc}
 
 %package -n     python2-%{sname}
 Summary:        %{summary}
@@ -38,11 +39,7 @@ Summary:        %{summary}
 Requires:       python-pbr
 Requires:       python-six
 %description -n python2-%{sname}
-OS-traits A library containing standardized trait strings.Traits are strings
-that represent a feature of some resource provider. This library contains the
-catalog of constants that have been standardized in the OpenStack community to
-refer to a particular hardware, virtualization, storage, network, or device
-trait.
+%{common_desc}
 
 %package -n     python2-%{sname}-tests
 Summary:        %{summary}
@@ -77,11 +74,7 @@ Requires:       python3-pbr
 Requires:       python3-six
 
 %description -n python3-%{sname}
-OS-traits A library containing standardized trait strings.Traits are strings
-that represent a feature of some resource provider. This library contains the
-catalog of constants that have been standardized in the OpenStack community to
-refer to a particular hardware, virtualization, storage, network, or device
-trait.
+%{common_desc}
 
 %package -n python3-%{sname}-tests
 Summary:        %{summary}
