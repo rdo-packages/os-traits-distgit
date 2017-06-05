@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_d8f57ccc",
+        "filename": "python-os-traits.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2017-06-05T20:13:11Z",
+      "side": 1,
+      "message": "Instead of introducing new macro, keep description here and reuse it as %{description} in sub packages.",
+      "revId": "6748b5146f546425d941fe4856560ea4b34e1ae8",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
