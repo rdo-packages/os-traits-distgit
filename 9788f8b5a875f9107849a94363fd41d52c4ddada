@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_384da873",
+        "filename": "python-os-traits.spec",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2017-06-05T06:01:01Z",
+      "side": 1,
+      "message": "Thanks chandan for checking, i meant the same that global var has to be used for avoiding duplicate description. I have sent a new patch for this [1].\nJust for information [2] Earlier it was possible when Description Tag was available(deprecated now)\n\n[1] https://review.rdoproject.org/r/#/c/6962/\n[2] http://ftp.rpm.org/api/4.4.2.2/specfile.html",
+      "parentUuid": "9aa7fdbe_f83320f4",
+      "revId": "9788f8b5a875f9107849a94363fd41d52c4ddada",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_2412e8b4",
         "filename": "python-os-traits.spec",
         "patchSetId": 10
