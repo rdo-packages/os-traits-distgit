@@ -16,6 +16,24 @@
       "revId": "6748b5146f546425d941fe4856560ea4b34e1ae8",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_58bfccd0",
+        "filename": "python-os-traits.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2017-06-06T04:16:34Z",
+      "side": 1,
+      "message": "@Alan can you please check my comment on https://review.rdoproject.org/r/#/c/6870/, i tried your suggestion but it didn\u0027t worked for me.",
+      "parentUuid": "9aa7fdbe_d8f57ccc",
+      "revId": "6748b5146f546425d941fe4856560ea4b34e1ae8",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
