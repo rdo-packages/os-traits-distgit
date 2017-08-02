@@ -36,8 +36,8 @@ BuildRequires:  python-setuptools
 Summary:        %{summary}
 %{?python_provide:%python_provide python2-%{sname}}
 
-Requires:       python-pbr
-Requires:       python-six
+Requires:       python-pbr >= 2.0.0
+Requires:       python-six >= 1.9.0
 %description -n python2-%{sname}
 %{common_desc}
 
@@ -70,8 +70,8 @@ BuildRequires:  python3-devel
 BuildRequires:  python3-pbr
 BuildRequires:  python3-setuptools
 
-Requires:       python3-pbr
-Requires:       python3-six
+Requires:       python3-pbr >= 2.0.0
+Requires:       python3-six >= 1.9.0
 
 %description -n python3-%{sname}
 %{common_desc}
