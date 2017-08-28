@@ -176,3 +176,4 @@ rm -rf .testrepository
 %endif
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/os-traits/commit/?id=21b879b755048047cbd5aad1ba544ed1df97d5d3
