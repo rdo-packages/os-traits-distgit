@@ -103,7 +103,7 @@ This package contains tests for python os-traits library.
 Summary:        os-traits documentation
 
 BuildRequires:  python-sphinx
-BuildRequires:  python-oslo-sphinx
+BuildRequires:  python-openstackdocstheme
 
 %description -n python-%{sname}-doc
 Documentation for os-traits
@@ -124,7 +124,7 @@ rm -rf {test-,}requirements.txt
 
 %if 0%{?with_doc}
 # generate html docs
-%{__python2} setup.py build_sphinx
+%{__python2} setup.py build_sphinx -b html
 # remove the sphinx build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
