@@ -106,6 +106,7 @@ BuildRequires:  python-sphinx
 # FIXME: remove following line when a new release including https://review.openstack.org/#/c/479869/ is in u-c
 BuildRequires:  python-oslo-sphinx
 BuildRequires:  python-openstackdocstheme
+BuildRequires: openstack-macros
 
 %description -n python-%{sname}-doc
 Documentation for os-traits
@@ -116,7 +117,7 @@ Documentation for os-traits
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 # remove requirements
-rm -rf {test-,}requirements.txt
+%py_req_cleanup
 
 %build
 %py2_build
