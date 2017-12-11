@@ -25,9 +25,7 @@ Source0:        http://tarballs.openstack.org/%{sname}/%{sname}-%{upstream_versi
 BuildArch:      noarch
 
 BuildRequires:  git
-BuildRequires:  python2-devel
-BuildRequires:  python-pbr
-BuildRequires:  python-setuptools
+BuildRequires:  openstack-macros
 
 %description
 %{common_desc}
@@ -38,6 +36,11 @@ Summary:        %{summary}
 
 Requires:       python-pbr >= 2.0.0
 Requires:       python-six >= 1.9.0
+
+BuildRequires:  python2-devel
+BuildRequires:  python-pbr
+BuildRequires:  python-setuptools
+
 %description -n python2-%{sname}
 %{common_desc}
 
@@ -106,7 +109,6 @@ BuildRequires:  python-sphinx
 # FIXME: remove following line when a new release including https://review.openstack.org/#/c/479869/ is in u-c
 BuildRequires:  python-oslo-sphinx
 BuildRequires:  python-openstackdocstheme
-BuildRequires: openstack-macros
 
 %description -n python-%{sname}-doc
 Documentation for os-traits
