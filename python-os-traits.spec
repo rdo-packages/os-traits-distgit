@@ -34,12 +34,12 @@ BuildRequires:  openstack-macros
 Summary:        %{summary}
 %{?python_provide:%python_provide python2-%{sname}}
 
-Requires:       python-pbr >= 2.0.0
-Requires:       python-six >= 1.9.0
+Requires:       python2-pbr >= 2.0.0
+Requires:       python2-six >= 1.10.0
 
 BuildRequires:  python2-devel
-BuildRequires:  python-pbr
-BuildRequires:  python-setuptools
+BuildRequires:  python2-pbr
+BuildRequires:  python2-setuptools
 
 %description -n python2-%{sname}
 %{common_desc}
@@ -48,18 +48,28 @@ BuildRequires:  python-setuptools
 Summary:        %{summary}
 
 # Required for the test suite
-BuildRequires:  python-subunit
-BuildRequires:  python-oslotest
+BuildRequires:  python2-subunit
+BuildRequires:  python2-oslotest
+BuildRequires:  python2-testtools
+%if 0%{?fedora} > 0
+BuildRequires:  python2-testrepository
+BuildRequires:  python2-testscenarios
+%else
 BuildRequires:  python-testrepository
 BuildRequires:  python-testscenarios
-BuildRequires:  python-testtools
+%endif
 
 Requires:       python2-%{sname} = %{version}-%{release}
-Requires:       python-subunit
-Requires:       python-oslotest
+Requires:       python2-subunit
+Requires:       python2-oslotest
+Requires:       python2-testtools
+%if 0%{?fedora} > 0
+Requires:       python2-testrepository
+Requires:       python2-testscenarios
+%else
 Requires:       python-testrepository
 Requires:       python-testscenarios
-Requires:       python-testtools
+%endif
 
 %description -n python2-%{sname}-tests
 This package contains tests for python os-traits library.
@@ -74,7 +84,7 @@ BuildRequires:  python3-pbr
 BuildRequires:  python3-setuptools
 
 Requires:       python3-pbr >= 2.0.0
-Requires:       python3-six >= 1.9.0
+Requires:       python3-six >= 1.10.0
 
 %description -n python3-%{sname}
 %{common_desc}
