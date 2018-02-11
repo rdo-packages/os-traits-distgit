@@ -15,8 +15,8 @@ trait.
 %endif
 
 Name:           python-%{sname}
-Version:        XXX
-Release:        XXX
+Version:        0.5.0
+Release:        1%{?dist}
 Summary:        A library containing standardized trait strings
 
 License:        ASL 2.0
@@ -191,3 +191,6 @@ rm -rf .testrepository
 %endif
 
 %changelog
+* Sun Feb 11 2018 RDO <dev@lists.rdoproject.org> 0.5.0-1
+- Update to 0.5.0
+
