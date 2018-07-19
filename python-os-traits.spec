@@ -51,11 +51,10 @@ Summary:        %{summary}
 BuildRequires:  python2-subunit
 BuildRequires:  python2-oslotest
 BuildRequires:  python2-testtools
+BuildRequires:  python2-stestr
 %if 0%{?fedora} > 0
-BuildRequires:  python2-testrepository
 BuildRequires:  python2-testscenarios
 %else
-BuildRequires:  python-testrepository
 BuildRequires:  python-testscenarios
 %endif
 
@@ -63,11 +62,10 @@ Requires:       python2-%{sname} = %{version}-%{release}
 Requires:       python2-subunit
 Requires:       python2-oslotest
 Requires:       python2-testtools
+Requires:       python2-stestr
 %if 0%{?fedora} > 0
-Requires:       python2-testrepository
 Requires:       python2-testscenarios
 %else
-Requires:       python-testrepository
 Requires:       python-testscenarios
 %endif
 
@@ -95,14 +93,14 @@ Summary:        %{summary}
 # Required for the test suite
 BuildRequires:  python3-subunit
 BuildRequires:  python3-oslotest
-BuildRequires:  python3-testrepository
+BuildRequires:  python3-stestr
 BuildRequires:  python3-testscenarios
 BuildRequires:  python3-testtools
 
 Requires:       python3-%{sname} = %{version}-%{release}
 Requires:       python3-subunit
 Requires:       python3-oslotest
-Requires:       python3-testrepository
+Requires:       python3-stestr
 Requires:       python3-testscenarios
 Requires:       python3-testtools
 
@@ -155,11 +153,9 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 
 
 %check
-%{__python2} setup.py testr
+%{__python2} setup.py test
 %if 0%{?with_python3}
-# cleanup testrepository
-rm -rf .testrepository
-%{__python3} setup.py testr
+%{__python3} setup.py test
 %endif
 
 %files -n python2-%{sname}
