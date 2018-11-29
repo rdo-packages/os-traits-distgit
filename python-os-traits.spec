@@ -1,3 +1,14 @@
+# Macros for py2/py3 compatibility
+%if 0%{?fedora} || 0%{?rhel} > 7
+%global pyver %{python3_pkgversion}
+%else
+%global pyver 2
+%endif
+%global pyver_bin python%{pyver}
+%global pyver_sitelib %python%{pyver}_sitelib
+%global pyver_install %py%{pyver}_install
+%global pyver_build %py%{pyver}_build
+# End of macros for py2/py3 compatibility
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global with_doc 1
 
@@ -9,10 +20,6 @@ that represent a feature of some resource provider. This library contains the \
 catalog of constants that have been standardized in the OpenStack community to \
 refer to a particular hardware, virtualization, storage, network, or device \
 trait.
-
-%if 0%{?fedora}
-%global with_python3 1
-%endif
 
 Name:           python-%{sname}
 Version:        XXX
@@ -30,93 +37,48 @@ BuildRequires:  openstack-macros
 %description
 %{common_desc}
 
-%package -n     python2-%{sname}
+%package -n     python%{pyver}-%{sname}
 Summary:        %{summary}
-%{?python_provide:%python_provide python2-%{sname}}
+%{?python_provide:%python_provide python%{pyver}-%{sname}}
 
-Requires:       python2-pbr >= 2.0.0
-Requires:       python2-six >= 1.10.0
+Requires:       python%{pyver}-pbr >= 2.0.0
+Requires:       python%{pyver}-six >= 1.10.0
 
-BuildRequires:  python2-devel
-BuildRequires:  python2-pbr
-BuildRequires:  python2-setuptools
+BuildRequires:  python%{pyver}-devel
+BuildRequires:  python%{pyver}-pbr
+BuildRequires:  python%{pyver}-setuptools
 
-%description -n python2-%{sname}
+%description -n python%{pyver}-%{sname}
 %{common_desc}
 
-%package -n     python2-%{sname}-tests
+%package -n     python%{pyver}-%{sname}-tests
 Summary:        %{summary}
 
 # Required for the test suite
-BuildRequires:  python2-subunit
-BuildRequires:  python2-oslotest
-BuildRequires:  python2-testtools
-BuildRequires:  python2-stestr
-%if 0%{?fedora} > 0
-BuildRequires:  python2-testscenarios
-%else
-BuildRequires:  python-testscenarios
-%endif
+BuildRequires:  python%{pyver}-subunit
+BuildRequires:  python%{pyver}-oslotest
+BuildRequires:  python%{pyver}-testtools
+BuildRequires:  python%{pyver}-stestr
+BuildRequires:  python%{pyver}-testscenarios
 
-Requires:       python2-%{sname} = %{version}-%{release}
-Requires:       python2-subunit
-Requires:       python2-oslotest
-Requires:       python2-testtools
-Requires:       python2-stestr
-%if 0%{?fedora} > 0
-Requires:       python2-testscenarios
-%else
-Requires:       python-testscenarios
-%endif
+Requires:       python%{pyver}-%{sname} = %{version}-%{release}
+Requires:       python%{pyver}-subunit
+Requires:       python%{pyver}-oslotest
+Requires:       python%{pyver}-testtools
+Requires:       python%{pyver}-stestr
+Requires:       python%{pyver}-testscenarios
 
-%description -n python2-%{sname}-tests
+%description -n python%{pyver}-%{sname}-tests
 This package contains tests for python os-traits library.
-
-%if 0%{?with_python3}
-%package -n     python3-%{sname}
-Summary:        %{summary}
-%{?python_provide:%python_provide python3-%{sname}}
-
-BuildRequires:  python3-devel
-BuildRequires:  python3-pbr
-BuildRequires:  python3-setuptools
-
-Requires:       python3-pbr >= 2.0.0
-Requires:       python3-six >= 1.10.0
-
-%description -n python3-%{sname}
-%{common_desc}
-
-%package -n python3-%{sname}-tests
-Summary:        %{summary}
-
-# Required for the test suite
-BuildRequires:  python3-subunit
-BuildRequires:  python3-oslotest
-BuildRequires:  python3-stestr
-BuildRequires:  python3-testscenarios
-BuildRequires:  python3-testtools
-
-Requires:       python3-%{sname} = %{version}-%{release}
-Requires:       python3-subunit
-Requires:       python3-oslotest
-Requires:       python3-stestr
-Requires:       python3-testscenarios
-Requires:       python3-testtools
-
-%description -n python3-%{sname}-tests
-This package contains tests for python os-traits library.
-%endif
-
 
 %if 0%{?with_doc}
 %package -n python-%{sname}-doc
 Summary:        os-traits documentation
 
-BuildRequires:  python-sphinx
+BuildRequires:  python%{pyver}-sphinx
 # FIXME: remove following line when a new release including https://review.openstack.org/#/c/479869/ is in u-c
-BuildRequires:  python-oslo-sphinx
-BuildRequires:  python-openstackdocstheme
+BuildRequires:  python%{pyver}-oslo-sphinx
+BuildRequires:  python%{pyver}-openstackdocstheme
 
 %description -n python-%{sname}-doc
 Documentation for os-traits
@@ -130,14 +92,11 @@ rm -rf %{pypi_name}.egg-info
 %py_req_cleanup
 
 %build
-%py2_build
-%if 0%{?with_python3}
-%py3_build
-%endif
+%{pyver_build}
 
 %if 0%{?with_doc}
 # generate html docs
-%{__python2} setup.py build_sphinx -b html
+%{pyver_bin} setup.py build_sphinx -b html
 # remove the sphinx build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
@@ -145,40 +104,21 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %install
 # Must do the subpackages' install first because the scripts in /usr/bin are
 # overwritten with every setup.py install.
-%if 0%{?with_python3}
-%py3_install
-%endif
-
-%py2_install
+%{pyver_install}
 
 
 %check
-%{__python2} setup.py test
-%if 0%{?with_python3}
-%{__python3} setup.py test
-%endif
+%{pyver_bin} setup.py test
 
-%files -n python2-%{sname}
+%files -n python%{pyver}-%{sname}
 %license LICENSE
 %doc README.rst
-%{python2_sitelib}/%{pypi_name}
-%{python2_sitelib}/%{pypi_name}-%{upstream_version}-py?.?.egg-info
-%exclude %{python2_sitelib}/%{pypi_name}/tests
+%{pyver_sitelib}/%{pypi_name}
+%{pyver_sitelib}/%{pypi_name}-%{upstream_version}-py?.?.egg-info
+%exclude %{pyver_sitelib}/%{pypi_name}/tests
 
-%files -n python2-%{sname}-tests
-%{python2_sitelib}/%{pypi_name}/tests
-
-%if 0%{?with_python3}
-%files -n python3-%{sname}
-%license LICENSE
-%doc README.rst
-%{python3_sitelib}/%{pypi_name}
-%{python3_sitelib}/%{pypi_name}-%{upstream_version}-py?.?.egg-info
-%exclude %{python3_sitelib}/%{pypi_name}/tests
-
-%files -n python3-%{sname}-tests
-%{python3_sitelib}/%{pypi_name}/tests
-%endif
+%files -n python%{pyver}-%{sname}-tests
+%{pyver_sitelib}/%{pypi_name}/tests
 
 %if 0%{?with_doc}
 %files -n python-%{sname}-doc
