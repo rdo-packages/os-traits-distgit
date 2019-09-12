@@ -76,8 +76,6 @@ This package contains tests for python os-traits library.
 Summary:        os-traits documentation
 
 BuildRequires:  python%{pyver}-sphinx
-# FIXME: remove following line when a new release including https://review.openstack.org/#/c/479869/ is in u-c
-BuildRequires:  python%{pyver}-oslo-sphinx
 BuildRequires:  python%{pyver}-openstackdocstheme
 
 %description -n python-%{sname}-doc
