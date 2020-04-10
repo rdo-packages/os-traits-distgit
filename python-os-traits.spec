@@ -42,7 +42,6 @@ Summary:        %{summary}
 %{?python_provide:%python_provide python%{pyver}-%{sname}}
 
 Requires:       python%{pyver}-pbr >= 2.0.0
-Requires:       python%{pyver}-six >= 1.10.0
 
 BuildRequires:  python%{pyver}-devel
 BuildRequires:  python%{pyver}-pbr
