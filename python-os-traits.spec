@@ -11,8 +11,8 @@ refer to a particular hardware, virtualization, storage, network, or device \
 trait.
 
 Name:           python-%{sname}
-Version:        XXX
-Release:        XXX
+Version:        2.4.0
+Release:        1%{?dist}
 Summary:        A library containing standardized trait strings
 
 License:        ASL 2.0
@@ -113,3 +113,6 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+* Mon Sep 21 2020 RDO <dev@lists.rdoproject.org> 2.4.0-1
+- Update to 2.4.0
+
